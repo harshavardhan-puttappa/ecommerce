@@ -8,6 +8,7 @@ const expressValidator = require("express-validator");
 require("dotenv").config(); // to use the details in .env file
 
 /** Import routes */
+const authRoutes = require("./routes/api/auth");
 const userRoutes = require("./routes/api/user");
 
 /** Mongo DB connection */
@@ -21,6 +22,7 @@ app.use(cookieParser());
 app.use(expressValidator());
 
 /** Routes Middleware */
+app.use("/api", authRoutes);
 app.use("/api", userRoutes);
 
 const PORT = process.env.PORT || 8000;
