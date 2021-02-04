@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { userById } = require("../../controllers/user");
+const { userById, readUser, updateUser } = require("../../controllers/user");
 const {
   requireSignin,
   isAuthorized,
@@ -18,6 +18,11 @@ router.get(
     });
   }
 );
+
+//read user profile
+router.get("/user/:userId", requireSignin, isAuthorized, readUser);
+// update user profile
+router.put("/user/:userId", requireSignin, isAuthorized, updateUser);
 
 router.param("userId", userById);
 

@@ -3,6 +3,7 @@ const app = express();
 const morgan = require("morgan"); // to track the routes requested in console
 const bodyParser = require("body-parser"); // to parse the req body data
 const cookieParser = require("cookie-parser");
+const cors = require("cors");
 const expressValidator = require("express-validator");
 
 require("dotenv").config(); // to use the details in .env file
@@ -22,6 +23,7 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
+app.use(cors());
 
 /** Routes Middleware */
 app.use("/api", authRoutes);

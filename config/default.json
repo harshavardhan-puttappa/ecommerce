@@ -1,3 +1,3 @@
 {
-  "mongoURI": "mongodb+srv://harsha:harsha123@ecommerce.m9ib7.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb://harsha:harsha123@ecommerce-shard-00-00.m9ib7.mongodb.net:27017,ecommerce-shard-00-01.m9ib7.mongodb.net:27017,ecommerce-shard-00-02.m9ib7.mongodb.net:27017/test?ssl=true&replicaSet=atlas-tvv0uo-shard-0&authSource=admin&retryWrites=true&w=majority"
 }
